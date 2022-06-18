@@ -10,7 +10,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    font-family: "custom", "averia serif" ;
+    font-family: "custom", averia-serif ;
 }
 
 header {
