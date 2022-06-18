@@ -48,6 +48,7 @@ button:hover {
 button {
     height: 8vh;
     width: 8vw;
+    min-width: 100px;
     border: 2px solid #1f6032;
     border-radius: 25%;
     font-size: large;
