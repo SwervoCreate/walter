@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 @font-face {
     font-family: "custom";
     src: url('averia_serif_libre-webfont.woff2') format('woff2'),
@@ -10,8 +11,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    font-family: "custom", averia-serif ;
-}
+    font-family: 'Manrope', sans-serif;}
 
 header {
     display: flex;
