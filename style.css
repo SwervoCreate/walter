@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "custom";
+    src: url('averia_serif_libre-webfont.woff2') format('woff2'),
+    url('averia_serif_libre-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "custom", "averia serif" ;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #369457;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #29773E;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-color: #093009;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button {
+    height: 8vh;
+    width: 8vw;
+    border: 2px solid #1f6032;
+    border-radius: 25%;
+    font-size: large;
+    font-weight: 800;
+}
+
+.photo-container {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    background-color: #1f6032;
+}
+
+img {
+    border: 2px solid #369457;
+    background-color: #093009;
+    border-radius: 25%;
+
+}
+
+.author-container {
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+    text-align: center;
+    background-color: #1f6032;
+}
+
