@@ -2,7 +2,9 @@ var button = document.getElementById("getQuote");
 var container = document.getElementById("container");
 const img = document.createElement("img");
 const photoContainer = document.getElementById("photoContainer");
-button.addEventListener("click", function() {
+
+
+function getQuote(){
     var url = "https://api.breakingbadquotes.xyz/v1/quotes";
 
 var xhr = new XMLHttpRequest();
@@ -24,6 +26,7 @@ xhr.onreadystatechange = function () {
         const oldImgNode = photoContainer.firstChild;
         photoContainer.appendChild(img);
         img.src = "/resources/walter.png";
+        
         } else if (data[0].author == "Jesse Pinkman") {
             const oldImgNode = photoContainer.firstChild;
         photoContainer.appendChild(img);
@@ -58,9 +61,63 @@ xhr.onreadystatechange = function () {
         img.src = "/resources/mike.png"
         }
         quote.innerHTML = data[0].author;
+        
+    
+        return data[0].author;
+       
    }};
 
-xhr.send();
+   xhr.send();
+   getCount();
 
-});
+
+};
+
+function getCount() {
+    const quote = document.getElementById("quote").innerHTML; 
+    if (quote == "Walter White") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Walter+White";
+    } else if (quote == "Jesse Pinkman") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Jesse+Pinkman";
+    } else if (quote == "Gustavo Fring") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Gustavo+Fring";
+    } else if (quote == "Saul Goodman") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Saul+Goodman";
+    } else if (quote == "Hank Schrader") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Hank+Schrader";
+    } else if (quote == "Walter White Jr.") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Walter+White+Jr";
+    } else if (quote == "Skyler White") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Skyler+White";
+    } else if (quote == "Mike Ehrmantraut") {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Mike+Ehrmantraut";
+    } else if (quote == "Badger") {
+        document.getElementById("killCount").innerHTML = "lmao c'mon now"
+    } else {
+        var url = "https://www.breakingbadapi.com/api/death-count?name=Walter+White";
+
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    
+    xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4) {
+          console.log(xhr.status);
+         
+          datas = JSON.parse(xhr.responseText);
+          document.getElementById("killCount").innerHTML = datas[0].deathCount;
+       }};
+    
+    xhr.send();
+}
+
+
+
+button.addEventListener("click", function() {
+    getQuote();
+    
+   });
+
+
 
